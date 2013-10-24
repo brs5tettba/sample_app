@@ -1,8 +1,24 @@
 SampleApp::Application.routes.draw do
-  get "static_pages/home"
-  get "static_pages/help"
-  get "static_pages/about"
-  get "static_pages/contact"
+
+######
+# Static Pages
+	#get "static_pages/home"
+	#	This method creates named routes ("root_path") and allows us to use '/' instead of '/static_pages/home'
+	root 'static_pages#home'
+	
+	#get "static_pages/help"
+	#get "static_pages/about"
+	#get "static_pages/contact"
+	#	This method creates named routes ("help_path") and allows us to use '/help' instead of '/static_pages/help'
+	match '/help',    to: 'static_pages#help',    via: 'get'
+	match '/about',   to: 'static_pages#about',   via: 'get'
+	match '/contact', to: 'static_pages#contact', via: 'get'
+
+######
+# Users
+  get "users/new"
+	match '/signup', to: 'users#new', via: 'get'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
