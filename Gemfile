@@ -6,6 +6,8 @@ ruby '2.0.0'
 gem 'rails', '4.0.0'
 # Use Twitter's Bootstrap web design (CSS/Sass) framework
 gem 'bootstrap-sass', '2.3.2.0'
+# State-of-the-art password encryption
+gem 'bcrypt-ruby', '3.0.1'
 
 group :development, :test do
 # RSpec is test automation (replacement for Test::Spec)
