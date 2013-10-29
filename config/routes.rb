@@ -9,14 +9,17 @@ SampleApp::Application.routes.draw do
 	#get "static_pages/help"
 	#get "static_pages/about"
 	#get "static_pages/contact"
-	#	This method creates named routes ("help_path") and allows us to use '/help' instead of '/static_pages/help'
+	#	Create named routes ("help_path") and allows us to use '/help' instead of '/static_pages/help'
 	match '/help',    to: 'static_pages#help',    via: 'get'
 	match '/about',   to: 'static_pages#about',   via: 'get'
 	match '/contact', to: 'static_pages#contact', via: 'get'
 
 ######
 # Users
-  get "users/new"
+  #get "users/new"
+	# resources :users replaces get "users/new" and adds other functions like /users/[id]
+	resources :users
+	# Custom named routes
 	match '/signup', to: 'users#new', via: 'get'
 
   # The priority is based upon order of creation: first created -> highest priority.
