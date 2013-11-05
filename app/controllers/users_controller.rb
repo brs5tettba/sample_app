@@ -15,6 +15,7 @@ class UsersController < ApplicationController
 		@user = User.new(user_params)
 		if @user.save
 			# flash is a hash displayed on the application.html.erb
+			sign_in @user
 			flash[:success] = "Welcome to the Sample App, " + @user.name + "!"
 			redirect_to @user
 		else

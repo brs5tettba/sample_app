@@ -12,5 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+// BDA add bootstrap javascript for dropdown functionality
+//= require bootstrap
 //= require turbolinks
 //= require_tree .
