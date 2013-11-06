@@ -3,11 +3,11 @@ ruby '2.0.0'
 #ruby-gemset=railstutorial_rails_4_0
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.1'
+gem 'rails', '4.0.0'
 # Use Twitter's Bootstrap web design (CSS/Sass) framework
 gem 'bootstrap-sass', '2.3.2.0'
 # State-of-the-art password encryption
-gem 'bcrypt-ruby', '3.1.2'
+gem 'bcrypt-ruby', '3.0.1'
 
 group :development, :test do
 # RSpec is test automation (replacement for Test::Spec)
@@ -55,6 +55,7 @@ gem 'jquery-rails', '3.0.4'
 gem 'turbolinks', '1.1.1'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '1.0.2'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 # unicorn as the app server
