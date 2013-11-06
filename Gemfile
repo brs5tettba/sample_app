@@ -3,11 +3,11 @@ ruby '2.0.0'
 #ruby-gemset=railstutorial_rails_4_0
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.0'
+gem 'rails', '4.0.1'
 # Use Twitter's Bootstrap web design (CSS/Sass) framework
 gem 'bootstrap-sass', '2.3.2.0'
 # State-of-the-art password encryption
-gem 'bcrypt-ruby', '3.0.1'
+gem 'bcrypt-ruby', '3.1.2'
 
 group :development, :test do
 # RSpec is test automation (replacement for Test::Spec)
