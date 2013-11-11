@@ -4,7 +4,6 @@ SampleApp::Application.routes.draw do
 # Static Pages
 	#get "static_pages/home"
 	#	This method creates named routes ("root_path") and allows us to use '/' instead of '/static_pages/home'
-
 	root 'static_pages#home'
 	
 	#get "static_pages/help"

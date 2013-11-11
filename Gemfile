@@ -3,17 +3,26 @@ ruby '2.0.0'
 #ruby-gemset=railstutorial_rails_4_0
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.0'
+gem 'rails', '4.0.1'
+#gem 'rails', '4.0.0'
+
 # Use Twitter's Bootstrap web design (CSS/Sass) framework
 gem 'bootstrap-sass', '2.3.2.0'
 # State-of-the-art password encryption
-gem 'bcrypt-ruby', '3.0.1'
+gem 'bcrypt-ruby', '3.1.2'
+#gem 'bcrypt-ruby', '3.0.1'
+# make sample users with semi-realistic names and email addresses
+gem 'faker', '1.1.2'
+# A simple but robust choice from many available pagination gems
+gem 'will_paginate', '3.0.4'
+gem 'bootstrap-will_paginate', '0.0.9'
 
 group :development, :test do
 # RSpec is test automation (replacement for Test::Spec)
 	gem 'rspec-rails', '2.13.1'
 # Guard automatically runs your specs as-needed
-	gem 'guard-rspec', '2.5.0' 
+	#gem 'guard-rspec', '2.5.0' 
+	gem 'guard-rspec', '2.5.1' 
 # required for Guard
 	gem 'libnotify', '0.8.0' 
 # Use sqlite3 as the database for Active Record
@@ -22,6 +31,8 @@ group :development, :test do
 	gem 'spork-rails', '4.0.0'
 	gem 'guard-spork', '1.5.0'
 	gem 'childprocess', '0.3.9'
+# Fix an error thrown by Guard, "Error: can't modify string; temporarily locked"
+	gem 'rb-readline', '~> 0.5.0'
 end
 
 group :test do

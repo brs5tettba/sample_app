@@ -9,7 +9,7 @@ describe "Static pages" do
 		expect(page).to have_title(full_title('About'))
 		click_link "Help"
 		expect(page).to have_title(full_title('Help'))
-		# The logo links to home ... be sure you start elsewhere.
+		# The logo links to home ... be sure you start somewhere other than home.
 		click_link "sample app"
 		expect(page).to have_selector('h1', text: 'Sample App')
 		click_link "Contact"
@@ -21,9 +21,7 @@ describe "Static pages" do
 		expect(page).to have_title(full_title('Sign up'))
 	end
 
-	# Get rid of expect(page)
 	subject { page }
-
 	let (:static_title) { 'Ruby on Rails Tutorial Sample App | ' }
 	
 	shared_examples_for "all static pages" do
@@ -32,27 +30,13 @@ describe "Static pages" do
 	end
 
 	describe "Home page" do
-		# executed before each example
-		#	before { visit '/static_pages/home' }
 		#	This is the named routes way:
 		before { visit root_path }
-
 		# for shared_examples..
 		let(:heading) { 'Sample App' }
 		let(:page_title) { '' }
-
-		# Plain-English description displayed in failed test results
-		#it "should have the content 'Sample App'" do
-		#	expect(page).to have_content('Sample App')
-		#end
-		# Made possible by subject { page }
-		#it { should have_content('Sample App') }
-		#it { should have_title('Ruby on Rails Tutorial Sample App') }
-		#it { should_not have_title('Home') }
-
 		# Made possible by shared_examples...
 		it_should_behave_like "all static pages"
-
 		it { should_not have_title('Home') }
 	end
 

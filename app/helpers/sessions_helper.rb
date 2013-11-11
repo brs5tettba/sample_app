@@ -33,9 +33,25 @@ module SessionsHelper
 		@current_user ||= User.find_by(remember_token: remember_token)
 	end
 
+	def current_user?(user)
+		# current_user is the method current_user, which fills and returns the value of @current_user
+		user == current_user
+	end
+
 	def sign_out
 		self.current_user = nil
 		cookies.delete(:remember_token)
+	end
+
+	def store_location
+	# usage: friendly forwarding.  If not signed in with the proper credentials, store the
+	# intended destination, then allow for sign in, then redirect to the intended location
+		session[:return_to] = request.url if request.get?
+	end
+
+	def redirect_back_or(default)
+		redirect_to(session[:return_to] || default)
+		session.delete(:return_to)
 	end
 
 end
